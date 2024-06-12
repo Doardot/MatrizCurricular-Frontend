@@ -1,0 +1,9 @@
+.cardSemestre{
+    display: flex;
+    background-color: rgba(190, 190, 190, 1);
+    border-radius: 30px;
+    width: 20rem;
+    height: 40rem;
+    align-items: center;
+    justify-content: center;
+}

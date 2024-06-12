@@ -1,0 +1,33 @@
+.body {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 9fr;
+    margin: auto;
+    height: 98vh;
+    background-color: rgba(217, 217, 217, 1);
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.page {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.cardSemester {
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    background-color: rgba(190, 190, 190, 1);
+    border-radius: 30px;
+    width: 20rem;
+    height: 40rem;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,36 @@
+.cardDisciplina{
+    width: 220px;
+    height: 110px;
+    border-radius: 10px;
+    border-left: 5px;
+    background-color: rgba(224, 224, 224, 1);
+    color: black;
+    display: grid;
+    grid-template-columns: 8px 204px 8px;
+    grid-template-rows: 8px 52px 42px 8px;
+}
+
+.tituloDisciplina{
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    text-overflow: ellipsis;
+    overflow: auto;
+    text-align: center;
+}
+
+.descricaoDisciplina{
+    grid-column: 2;
+    grid-row:3;
+    font: Inter;
+    font-weight: medium;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
