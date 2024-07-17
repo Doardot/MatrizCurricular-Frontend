@@ -1,0 +1,21 @@
+.botaoSalvar {
+    display: flex;
+    background-color: rgb(var(--light-blue));
+    cursor: pointer;
+    border-radius: 20px;
+    height: 10%;
+}
+
+.salvarTexto {
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.botaoSalvar:hover {
+    background-color: rgb(82, 123, 184);
+    cursor: pointer;
+    transform: scale(1.05);
+}
