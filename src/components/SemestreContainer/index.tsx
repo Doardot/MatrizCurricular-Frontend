@@ -5,6 +5,8 @@ import './index.css';
 import DisciplinaCard from '../DisciplinaCard';
 import BotaoSalvar from '../BotaoSalvar';
 
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+
 interface SemesterContainer {
     disciplinas: any[];
     onSave: () => void;
@@ -17,13 +19,15 @@ export default function SemesterContainer({
     return (
         <div>
             <div className='semesterContainer'>
-                {disciplinas.map((disciplina, index) => (
-                    <DisciplinaCard key={index} disciplina={disciplina} />
-                ))}
-                <div>
-                    {/* Void box for creating new disciplines */}
-                    <BotaoSalvar onButtonClick={onSave} />
-                </div>
+                <SortableContext items={disciplinas} strategy={verticalListSortingStrategy}>
+                    {disciplinas.map((disciplina, index) => (
+                        <DisciplinaCard key={index} disciplina={disciplina} />
+                    ))}
+                    <div>
+                        {/* Void box for creating new disciplines */}
+                        <BotaoSalvar onButtonClick={onSave} />
+                    </div>
+                </SortableContext>
             </div>
         </div>
     );

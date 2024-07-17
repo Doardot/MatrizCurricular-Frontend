@@ -2,34 +2,40 @@
 
 import Header from '@/components/Header';
 import './styles.css';
-import React from 'react';
+import React, { useState } from 'react';
 import SemesterContainer from '@/components/SemestreContainer';
 import BotaoAdicionar from '@/components/BotaoAdicionar';
+import { closestCorners, DndContext } from '@dnd-kit/core';
 
 export default function Disciplinas() {
 
-    const disciplinaExemplo = {
-        nome: 'Laboratorio de Redes Computadores',
-        codCred: 'MAT101',
-        semestre: '2022.1'
-    };
-    const disciplinaExemplo2 = {
-        nome: 'Laboratorio de Redes Computadores',
-        codCred: 'MAT101',
-        semestre: '2022.1'
-    };
+    const [disciplinasExemplo, setDisciplinasExemplo] = useState([
+        {
+            nome: 'Laboratorio de Redes Computadores',
+            codCred: 'MAT101',
+            semestre: '2022.1'
+        },
+        {
+            nome: 'Laboratorio de Testes',
+            codCred: 'MAT102',
+            semestre: '2022.1'
+        }
+    ]);
 
     return <>
         <div className="body">
             <Header />
             <div className="page">
                 <div className="cardSemester">
-                    <SemesterContainer disciplinas={[disciplinaExemplo, disciplinaExemplo2]} onSave={() => { }} />
-                    <SemesterContainer disciplinas={[disciplinaExemplo, disciplinaExemplo2]} onSave={() => { }} />
-                    <BotaoAdicionar onButtonClick={() => { }} />
+                    <DndContext collisionDetection={closestCorners}>
+                        <SemesterContainer disciplinas={disciplinasExemplo} onSave={() => { }} />
+                        {/* TODO: FIX no css da caixa, está colidindo os semestres */}
+                        <SemesterContainer disciplinas={disciplinasExemplo} onSave={() => { }} />
+                        <BotaoAdicionar onButtonClick={() => { }} />
+                    </DndContext>
                 </div>
             </div>
-        </div>
+        </div >
 
     </>
 }
