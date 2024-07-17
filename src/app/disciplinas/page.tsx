@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import './styles.css';
 import React from 'react';
 import SemesterContainer from '@/components/SemestreContainer';
+import BotaoAdicionar from '@/components/BotaoAdicionar';
 
 export default function Disciplinas() {
 
@@ -22,12 +23,11 @@ export default function Disciplinas() {
         <div className="body">
             <Header />
             <div className="page">
-
                 <div className="cardSemester">
                     <SemesterContainer disciplinas={[disciplinaExemplo, disciplinaExemplo2]} onSave={() => { }} />
+                    <SemesterContainer disciplinas={[disciplinaExemplo, disciplinaExemplo2]} onSave={() => { }} />
+                    <BotaoAdicionar onButtonClick={() => { }} />
                 </div>
-
-
             </div>
         </div>
 
