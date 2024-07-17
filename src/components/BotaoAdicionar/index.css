@@ -1,0 +1,22 @@
+.botao-customizado{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(190, 190, 190, 1);
+    border-radius: 30px;
+    width: 20rem;
+    height: 40rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.botao-customizado:hover {
+    background-color: rgb(180, 178, 178); 
+    cursor: pointer; 
+    transform: scale(1.02);
+}
+
+.mais{
+    font-size: 200px;
+    color: gray;
+}
