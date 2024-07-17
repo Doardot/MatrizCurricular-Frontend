@@ -3,6 +3,7 @@
 import React from 'react';
 import './index.css';
 import DisciplinaCard from '../DisciplinaCard';
+import BotaoSalvar from '../BotaoSalvar';
 
 interface SemesterContainer {
     disciplinas: any[];
@@ -21,7 +22,7 @@ export default function SemesterContainer({
                 ))}
                 <div>
                     {/* Void box for creating new disciplines */}
-                    <button onClick={onSave}>Save</button>
+                    <BotaoSalvar onButtonClick={onSave} />
                 </div>
             </div>
         </div>

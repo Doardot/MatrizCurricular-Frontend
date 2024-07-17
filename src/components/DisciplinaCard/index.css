@@ -10,6 +10,11 @@
     grid-template-rows: 8px 52px 42px 8px;
 }
 
+.cardDisciplina:hover {
+    cursor: pointer; 
+    transform: scale(1.03);
+}
+
 .tituloDisciplina{
     grid-column: 2;
     grid-row: 2;

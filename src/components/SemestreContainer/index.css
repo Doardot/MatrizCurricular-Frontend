@@ -9,3 +9,8 @@
     justify-content: center;
     gap: 1rem;
 }
+
+.semesterContainer:hover {
+    background-color: rgba(190, 190, 190, 0.895); 
+    cursor: pointer; 
+}
