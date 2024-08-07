@@ -6,19 +6,23 @@ import './index.css';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
+// interface DisciplinaCardProps {
+//     disciplina: {
+//         semestre: string;
+//         nome: string;
+//         codCred: string;
+//     }
+// }
+
 interface DisciplinaCardProps {
-    disciplina: {
-        semestre: string;
-        nome: string;
-        codCred: string;
-    }
+    semestre: string;
+    nome: string;
+    codCred: string;
 }
 
-export default function DisciplinaCard({
-    disciplina: { semestre, nome, codCred }
-}: DisciplinaCardProps) {
-    const { attributes, listeners, setNodeRef,
-        transform, transition } = useSortable({ id: codCred });
+export const DisciplinaCard = ({ semestre, nome, codCred }: DisciplinaCardProps) => {
+    const { attributes, listeners, setNodeRef, transform, transition } =
+        useSortable({ id: codCred });
 
     const style = {
         transition,

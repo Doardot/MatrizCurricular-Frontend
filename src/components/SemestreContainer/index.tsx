@@ -1,34 +1,42 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
-import DisciplinaCard from '../DisciplinaCard';
+import { DisciplinaCard } from '../DisciplinaCard';
 import BotaoSalvar from '../BotaoSalvar';
 
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 
-interface SemesterContainer {
-    disciplinas: any[];
-    onSave: () => void;
+interface SemesterContainerProps {
+    disciplinas: {
+        semestre: string;
+        nome: string;
+        codCred: string;
+    }[];
 }
 
-export default function SemesterContainer({
-    disciplinas,
-    onSave
-}: SemesterContainer) {
+export const SemesterContainer = ({ disciplinas: disciplinas }: SemesterContainerProps) => {
     return (
-        <div>
-            <div className='semesterContainer'>
-                <SortableContext items={disciplinas} strategy={verticalListSortingStrategy}>
-                    {disciplinas.map((disciplina, index) => (
-                        <DisciplinaCard key={index} disciplina={disciplina} />
-                    ))}
-                    <div>
-                        {/* Void box for creating new disciplines */}
-                        <BotaoSalvar onButtonClick={onSave} />
-                    </div>
-                </SortableContext>
-            </div>
+        // <DndContext collisionDetection={closestCenter}>
+        // <div>
+        <div className='semesterContainer'>
+            <SortableContext items={disciplinas.map((disciplina, index) => disciplina.codCred)} strategy={verticalListSortingStrategy}>
+                {disciplinas.map((disciplina) => (
+                    <DisciplinaCard
+                        key={disciplina.codCred}
+                        semestre={disciplina.semestre}
+                        nome={disciplina.nome}
+                        codCred={disciplina.codCred}
+                    />
+                ))}
+            </SortableContext>
         </div>
     );
 }
+{/* Void box for creating new disciplines */ }
+{/* <BotaoSalvar onButtonClick={() => { }} /> */ }
+{/* </div> */ }
+
+
+{/* </div> */ }
+// </DndContext>
