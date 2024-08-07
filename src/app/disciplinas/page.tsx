@@ -5,29 +5,44 @@ import './styles.css';
 import React, { useState } from 'react';
 import { SemesterContainer } from '@/components/SemestreContainer';
 import BotaoAdicionar from '@/components/BotaoAdicionar';
-import { closestCorners, DndContext } from '@dnd-kit/core';
 import {
+    DndContext,
     KeyboardSensor,
     PointerSensor,
     useSensor,
     useSensors,
+    closestCorners,
 } from "@dnd-kit/core";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 export default function Disciplinas() {
 
-    const [disciplina, setDisciplina] = useState([
-        {
-            nome: 'Laboratorio de Redes Computadores',
-            codCred: 'MAT101',
-            semestre: '2022.1'
-        },
-        {
-            nome: 'Laboratorio de Testes',
-            codCred: 'MAT102',
-            semestre: '2022.1'
-        }
+    const [disciplinas, setDisciplinas] = useState([
+        { codCred: 'MAT101', nome: 'Laboratorio de Redes Computadores', semestre: '2022.1' },
+        { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
     ]);
+
+    const getDisciplinasPos = (codCred: string) => disciplinas.findIndex((disciplina) => disciplina.codCred === codCred);
+
+    const handleDragEnd = (event: any) => {
+        const { active, over } = event;
+
+        console.log('Drag End Event:', event);
+        console.log('Active:', active);
+        console.log('Over:', over);
+
+        if (!over || active.id === over.id) return;
+
+        setDisciplinas(disciplinas => {
+            const originalPos = getDisciplinasPos(active.id);
+            const newPos = getDisciplinasPos(over.id);
+
+            console.log('Original Position:', originalPos);
+            console.log('New Position:', newPos);
+
+            return arrayMove(disciplinas, originalPos, newPos);
+        });
+    };
 
     return <>
         <div className="body">
@@ -36,9 +51,9 @@ export default function Disciplinas() {
                 <div className="cardSemester">
                     <DndContext
                         collisionDetection={closestCorners}
-
+                        onDragEnd={handleDragEnd}
                     >
-                        <SemesterContainer disciplinas={disciplina} />
+                        <SemesterContainer disciplinas={disciplinas} />
                         {/* TODO: FIX no css da caixa, está colidindo os semestres */}
                         {/* <SemesterContainer disciplinas={disciplinasExemplo} onSave={() => { }} /> */}
                     </DndContext>
