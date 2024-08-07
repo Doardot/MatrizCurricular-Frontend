@@ -22,6 +22,13 @@ export default function Disciplinas() {
         { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
     ]);
 
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
     const getDisciplinasPos = (codCred: string) => disciplinas.findIndex((disciplina) => disciplina.codCred === codCred);
 
     const handleDragEnd = (event: any) => {
@@ -50,6 +57,7 @@ export default function Disciplinas() {
             <div className="page">
                 <div className="cardSemester">
                     <DndContext
+                        sensors={sensors}
                         collisionDetection={closestCorners}
                         onDragEnd={handleDragEnd}
                     >
