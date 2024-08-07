@@ -17,9 +17,18 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 export default function Disciplinas() {
 
+    // TODO: ajustar a resolução da tela, abrir um bugfix para isso
+
     const [disciplinas, setDisciplinas] = useState([
         { codCred: 'MAT101', nome: 'Laboratorio de Redes Computadores', semestre: '2022.1' },
         { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
+        { codCred: 'MAT103', nome: 'Experiência do Usuário', semestre: '2022.1' },
+        { codCred: 'MAT104', nome: 'Queimada', semestre: '2022.1' },
+    ]);
+    
+    const [disciplinas2, setDisciplinas2] = useState([
+        { codCred: 'MAT105', nome: 'Algoritmo e Estrutura de Dados I', semestre: '2022.2' },
+        { codCred: 'MAT106', nome: 'Experiência do Usuário', semestre: '2022.2' },
     ]);
 
     const sensors = useSensors(
@@ -63,8 +72,9 @@ export default function Disciplinas() {
                     >
                         <SemesterContainer disciplinas={disciplinas} />
                         {/* TODO: FIX no css da caixa, está colidindo os semestres */}
-                        {/* <SemesterContainer disciplinas={disciplinasExemplo} onSave={() => { }} /> */}
+                        {/* <SemesterContainer disciplinas={disciplinas2} /> */}
                     </DndContext>
+                    {/* TODO: FIX no css aqui também */}
                     {/* <BotaoAdicionar onButtonClick={() => { }} /> */}
                 </div>
             </div>

@@ -17,8 +17,6 @@ interface SemesterContainerProps {
 
 export const SemesterContainer = ({ disciplinas: disciplinas }: SemesterContainerProps) => {
     return (
-        // <DndContext collisionDetection={closestCenter}>
-        // <div>
         <div className='semesterContainer'>
             <SortableContext items={disciplinas.map((disciplina, index) => disciplina.codCred)} strategy={verticalListSortingStrategy}>
                 {disciplinas.map((disciplina) => (
@@ -30,13 +28,10 @@ export const SemesterContainer = ({ disciplinas: disciplinas }: SemesterContaine
                     />
                 ))}
             </SortableContext>
+
+            <div className='voidBox'>
+                <BotaoSalvar onButtonClick={() => { }} />
+            </div>
         </div>
     );
 }
-{/* Void box for creating new disciplines */ }
-{/* <BotaoSalvar onButtonClick={() => { }} /> */ }
-{/* </div> */ }
-
-
-{/* </div> */ }
-// </DndContext>
