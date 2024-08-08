@@ -25,7 +25,7 @@ export default function Disciplinas() {
         { codCred: 'MAT103', nome: 'Experiência do Usuário', semestre: '2022.1' },
         { codCred: 'MAT104', nome: 'Queimada', semestre: '2022.1' },
     ]);
-    
+
     const [disciplinas2, setDisciplinas2] = useState([
         { codCred: 'MAT105', nome: 'Algoritmo e Estrutura de Dados I', semestre: '2022.2' },
         { codCred: 'MAT106', nome: 'Experiência do Usuário', semestre: '2022.2' },
@@ -43,18 +43,11 @@ export default function Disciplinas() {
     const handleDragEnd = (event: any) => {
         const { active, over } = event;
 
-        console.log('Drag End Event:', event);
-        console.log('Active:', active);
-        console.log('Over:', over);
-
         if (!over || active.id === over.id) return;
 
         setDisciplinas(disciplinas => {
             const originalPos = getDisciplinasPos(active.id);
             const newPos = getDisciplinasPos(over.id);
-
-            console.log('Original Position:', originalPos);
-            console.log('New Position:', newPos);
 
             return arrayMove(disciplinas, originalPos, newPos);
         });
@@ -74,8 +67,11 @@ export default function Disciplinas() {
                         {/* TODO: FIX no css da caixa, está colidindo os semestres */}
                         {/* <SemesterContainer disciplinas={disciplinas2} /> */}
                     </DndContext>
-                    {/* TODO: FIX no css aqui também */}
-                    {/* <BotaoAdicionar onButtonClick={() => { }} /> */}
+                    
+                </div>
+                {/* TODO: FIX no css aqui também */}
+                <div className='botaoAdicionar'>
+                    <BotaoAdicionar onButtonClick={() => { }} />
                 </div>
             </div>
         </div >
