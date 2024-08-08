@@ -1,26 +1,34 @@
-.cardHeader{
-    display: grid;
-    grid-template-columns: 0.1fr 1fr 9fr 0.1fr;
-    grid-template-rows: 10px 60px 10px;
-    width: 100%;
-    height: 80px;
+.headerContainer{
+    width: 100vw;
+    height: 10vh;
     background-color: rgba(92, 133, 195, 1);
+    display: flex;
+    align-items: center;
+}
+
+.cardHeader{ 
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 37vw; /* solucao provisoria - tentar centralizar automatico */
 }
 
 .iconHeader{
-    grid-column: 2;
-    grid-row: 2;
     color:white;
-    font-size: 60px;
+    font-size: 5vh;
+    height: 100%;
+    justify-self: left;
+    display: flex;
+    margin-left: 0.5vw;
 }
 
 .titleHeader{
-    grid-column: 3;
-    grid-row: 2;
-    font-size: 32px;
+    font-size: 5vh;
     display: flex;
+    height:100%;
+    color:white;
     align-items: center;
-    justify-content: center;
-    width:90%;
-    color:white; 
 }

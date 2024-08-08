@@ -1,4 +1,10 @@
-.botao-customizado{
+.body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.botao-customizado {
     display: flex;
     flex-direction: column;
     background-color: rgba(190, 190, 190, 1);
@@ -7,12 +13,12 @@
     height: 40rem;
     align-items: center;
     justify-content: center;
-
+    flex-grow: 1;
 }
 
 .botao-customizado:hover {
-    background-color: rgb(180, 178, 178); 
-    cursor: pointer; 
+    background-color: rgb(180, 178, 178);
+    cursor: pointer;
     transform: scale(1.02);
 }
 

@@ -1,32 +1,23 @@
 .body {
-    display: grid;
     height: 100vh;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0fr 9fr;
-    margin: auto;
+    width: 100vw;
     background-color: rgba(217, 217, 217, 1);
-}
-
-.header {
-    display: flex;
-    grid-template-columns: 1fr;
 }
 
 .page {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
     gap: 5vw;
+    overflow-x: auto;
+    height: 90vh;
+    width: 100%;
 }
 
-.cardSemester {
+.containerMatriz {
     display: flex;
-    background-color: rgba(190, 190, 190, 1);
-    border-radius: 30px;
-    width: 20rem;
-    height: 40rem;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
+    flex-direction: row;
+    gap: 3vw;
+    height: 80%;
 }

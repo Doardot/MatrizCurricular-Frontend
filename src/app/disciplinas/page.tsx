@@ -19,59 +19,68 @@ export default function Disciplinas() {
 
     // TODO: ajustar a resolução da tela, abrir um bugfix para isso
 
-    const [disciplinas, setDisciplinas] = useState([
-        { codCred: 'MAT101', nome: 'Laboratorio de Redes Computadores', semestre: '2022.1' },
-        { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
-        { codCred: 'MAT103', nome: 'Experiência do Usuário', semestre: '2022.1' },
-        { codCred: 'MAT104', nome: 'Queimada', semestre: '2022.1' },
-    ]);
+    // const [disciplinas, setDisciplinas] = useState([
+    //     { codCred: 'MAT101', nome: 'Laboratorio de Redes Computadores', semestre: '2022.1' },
+    //     { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
+    //     { codCred: 'MAT103', nome: 'Experiência do Usuário', semestre: '2022.1' },
+    //     { codCred: 'MAT104', nome: 'Queimada', semestre: '2022.1' },
+    // ]);
 
-    const [disciplinas2, setDisciplinas2] = useState([
-        { codCred: 'MAT105', nome: 'Algoritmo e Estrutura de Dados I', semestre: '2022.2' },
-        { codCred: 'MAT106', nome: 'Experiência do Usuário', semestre: '2022.2' },
-    ]);
+    // const [disciplinas2, setDisciplinas2] = useState([
+    //     { codCred: 'MAT105', nome: 'Algoritmo e Estrutura de Dados I', semestre: '2022.2' },
+    //     { codCred: 'MAT106', nome: 'Experiência do Usuário', semestre: '2022.2' },
+    // ]);
 
-    const sensors = useSensors(
-        useSensor(PointerSensor),
-        useSensor(KeyboardSensor, {
-            coordinateGetter: sortableKeyboardCoordinates,
-        })
-    );
+    // const sensors = useSensors(
+    //     useSensor(PointerSensor),
+    //     useSensor(KeyboardSensor, {
+    //         coordinateGetter: sortableKeyboardCoordinates,
+    //     })
+    // );
 
-    const getDisciplinasPos = (codCred: string) => disciplinas.findIndex((disciplina) => disciplina.codCred === codCred);
+    // const getDisciplinasPos = (codCred: string) => disciplinas.findIndex((disciplina) => disciplina.codCred === codCred);
 
-    const handleDragEnd = (event: any) => {
-        const { active, over } = event;
+    // const handleDragEnd = (event: any) => {
+    //     const { active, over } = event;
 
-        if (!over || active.id === over.id) return;
+    //     if (!over || active.id === over.id) return;
 
-        setDisciplinas(disciplinas => {
-            const originalPos = getDisciplinasPos(active.id);
-            const newPos = getDisciplinasPos(over.id);
+    //     setDisciplinas(disciplinas => {
+    //         const originalPos = getDisciplinasPos(active.id);
+    //         const newPos = getDisciplinasPos(over.id);
 
-            return arrayMove(disciplinas, originalPos, newPos);
-        });
-    };
+    //         return arrayMove(disciplinas, originalPos, newPos);
+    //     });
+    // };
 
     return <>
         <div className="body">
             <Header />
             <div className="page">
-                <div className="cardSemester">
-                    <DndContext
-                        sensors={sensors}
-                        collisionDetection={closestCorners}
-                        onDragEnd={handleDragEnd}
-                    >
-                        <SemesterContainer disciplinas={disciplinas} />
+                <div className="containerMatriz">
+                    {/* <div className="cardSemester"> */}
+                        {/* <DndContext
+                            sensors={sensors}
+                            collisionDetection={closestCorners}
+                            onDragEnd={handleDragEnd}
+                        > */}
+                        <SemesterContainer disciplinas={[]}/>
                         {/* TODO: FIX no css da caixa, está colidindo os semestres */}
                         {/* <SemesterContainer disciplinas={disciplinas2} /> */}
-                    </DndContext>
-                    
-                </div>
-                {/* TODO: FIX no css aqui também */}
-                <div className='botaoAdicionar'>
-                    <BotaoAdicionar onButtonClick={() => { }} />
+                        {/* </DndContext> */}
+                    {/* </div> */}
+                    <SemesterContainer disciplinas={[]}/>
+                    <SemesterContainer disciplinas={[]}/>
+                    <SemesterContainer disciplinas={[]}/>
+                    <SemesterContainer disciplinas={[]}/>
+                    <SemesterContainer disciplinas={[]}/>
+
+                    {/* TODO: FIX no css aqui também */}
+                    <div className='botaoAdicionar'>
+                        <BotaoAdicionar onButtonClick={() => { }} />
+                    </div>
+
+
                 </div>
             </div>
         </div >
