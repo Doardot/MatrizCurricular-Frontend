@@ -76,11 +76,7 @@ export default function Disciplinas() {
                     <SemesterContainer disciplinas={[]}/>
 
                     {/* TODO: FIX no css aqui também */}
-                    <div className='botaoAdicionar'>
-                        <BotaoAdicionar onButtonClick={() => { }} />
-                    </div>
-
-
+                    <BotaoAdicionar onButtonClick={() => { }} />
                 </div>
             </div>
         </div >

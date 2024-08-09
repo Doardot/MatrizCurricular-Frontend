@@ -9,8 +9,8 @@
     flex-direction: column;
     background-color: rgba(190, 190, 190, 1);
     border-radius: 30px;
-    width: 20rem;
-    height: 40rem;
+    width: 15vw;
+    height: 100%;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
@@ -23,6 +23,6 @@
 }
 
 .mais{
-    font-size: 200px;
+    font-size: 13vw;
     color: gray;
 }
