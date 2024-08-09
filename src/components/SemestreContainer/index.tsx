@@ -66,12 +66,12 @@ export const SemesterContainer = ({ }: SemesterContainerProps) => {
                         strategy={verticalListSortingStrategy}>
                         {disciplinas.map((disciplina) => (
                             <div className="cardContainer">
-                            <DisciplinaCard
-                                key={disciplina.codCred}
-                                semestre={disciplina.semestre}
-                                nome={disciplina.nome}
-                                codCred={disciplina.codCred}
-                            />
+                                <DisciplinaCard
+                                    key={disciplina.codCred}
+                                    semestre={disciplina.semestre}
+                                    nome={disciplina.nome}
+                                    codCred={disciplina.codCred}
+                                />
                             </div>
                         ))}
                     </SortableContext>
