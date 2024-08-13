@@ -6,14 +6,6 @@ import './index.css';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 
-// interface DisciplinaCardProps {
-//     disciplina: {
-//         semestre: string;
-//         nome: string;
-//         codCred: string;
-//     }
-// }
-
 interface DisciplinaCardProps {
     semestre: string;
     nome: string;
