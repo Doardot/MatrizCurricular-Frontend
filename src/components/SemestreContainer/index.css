@@ -1,6 +1,7 @@
 .semesterContainer{
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
     background-color: rgba(190, 190, 190, 1);
     border-radius: 30px;
     width: 20rem;
@@ -8,9 +9,19 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    overflow:hidden;
+    overflow-y: scroll;
 }
 
 .semesterContainer:hover {
     background-color: rgba(190, 190, 190, 0.895); 
     cursor: pointer; 
+}
+
+.semesterContainerFather{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    align-items: center;
+    justify-content: center;
 }

@@ -17,18 +17,21 @@ interface SemesterContainerProps {
 
 export const SemesterContainer = ({ disciplinas: disciplinas }: SemesterContainerProps) => {
     return (
-        <div className='semesterContainer'>
-            <SortableContext items={disciplinas.map((disciplina, index) => disciplina.codCred)} strategy={verticalListSortingStrategy}>
-                {disciplinas.map((disciplina) => (
-                    <DisciplinaCard
-                        key={disciplina.codCred}
-                        semestre={disciplina.semestre}
-                        nome={disciplina.nome}
-                        codCred={disciplina.codCred}
-                    />
-                ))}
-            </SortableContext>
-
+        <div>
+            <div className='semesterContainer'>
+                <SortableContext items={disciplinas.map((disciplina, index) => disciplina.codCred)} strategy={verticalListSortingStrategy}>
+                    {disciplinas.map((disciplina) => (
+                        <DisciplinaCard
+                            key={disciplina.codCred}
+                            semestre={disciplina.semestre}
+                            nome={disciplina.nome}
+                            codCred={disciplina.codCred}
+                        />
+                    ))}
+                </SortableContext>
+                
+                
+            </div>
             <div className='voidBox'>
                 <BotaoSalvar onButtonClick={() => { }} />
             </div>

@@ -24,6 +24,8 @@ export default function Disciplinas() {
         { codCred: 'MAT102', nome: 'Laboratorio de Testes', semestre: '2022.1' },
         { codCred: 'MAT103', nome: 'Experiência do Usuário', semestre: '2022.1' },
         { codCred: 'MAT104', nome: 'Queimada', semestre: '2022.1' },
+        { codCred: 'MAT144', nome: 'Queimada', semestre: '2022.1' },
+        { codCred: 'MAT04', nome: 'Queimada', semestre: '2022.1' },
     ]);
 
     const [disciplinas2, setDisciplinas2] = useState([
