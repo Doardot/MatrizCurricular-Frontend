@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 8px 204px 8px;
     grid-template-rows: 8px 52px 42px 8px;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.2)
 }
 
 .cardDisciplina:hover {

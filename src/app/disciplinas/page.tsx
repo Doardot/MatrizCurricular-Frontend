@@ -31,6 +31,7 @@ export default function Disciplinas() {
     const [disciplinas2, setDisciplinas2] = useState([
         { codCred: 'MAT105', nome: 'Algoritmo e Estrutura de Dados I', semestre: '2022.2' },
         { codCred: 'MAT106', nome: 'Experiência do Usuário', semestre: '2022.2' },
+        { codCred: 'MAT107', nome: 'Experiência do Usuário', semestre: '2022.2' },
     ]);
 
     const sensors = useSensors(
@@ -41,6 +42,7 @@ export default function Disciplinas() {
     );
 
     const getDisciplinasPos = (codCred: string) => disciplinas.findIndex((disciplina) => disciplina.codCred === codCred);
+    const getDisciplinasPos2 = (codCred: string) => disciplinas2.findIndex((disciplina) => disciplina.codCred === codCred);
 
     const handleDragEnd = (event: any) => {
         const { active, over } = event;
@@ -50,6 +52,12 @@ export default function Disciplinas() {
         setDisciplinas(disciplinas => {
             const originalPos = getDisciplinasPos(active.id);
             const newPos = getDisciplinasPos(over.id);
+
+            return arrayMove(disciplinas, originalPos, newPos);
+        });
+        setDisciplinas2(disciplinas => {
+            const originalPos = getDisciplinasPos2(active.id);
+            const newPos = getDisciplinasPos2(over.id);
 
             return arrayMove(disciplinas, originalPos, newPos);
         });

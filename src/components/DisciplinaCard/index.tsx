@@ -35,7 +35,7 @@ export const DisciplinaCard = ({ semestre, nome, codCred }: DisciplinaCardProps)
             {...listeners}
             style={style}
             className="cardDisciplina"
-            data-semester={semestre}>
+            data-semester={semestre} draggable>
 
             <div className="tituloDisciplina">
                 <h2 style={{ margin: '0' }}>{nome}</h2>
