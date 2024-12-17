@@ -5,6 +5,7 @@
     grid-template-rows: 0fr 9fr;
     margin: auto;
     background-color: rgba(217, 217, 217, 1);
+    background-color: hsl(0, 0%, 93%);
 }
 
 .header {
@@ -23,15 +24,24 @@
 .cardSemester {
     padding: 25px;
     display: flex;
-    height: 80%;
+    max-height: 800px;
+    max-width: 70%;
+    margin: auto;
     border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    gap: 5vw;
-    overflow-anchor: auto;
+    align-items: flex-start;
+    box-sizing: border-box;
+    /*justify-content: center;*/
+    justify-content:safe center;;
+    gap: 3vw;
+    overflow-anchor: none;
     overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
     /*scrollbar-width: none;*/
-    scrollbar-color: hsla(0, 100%, 99%, 0.678) gray;
+    scrollbar-color: gray  hsla(0, 0%, 63%, 0.678);
     scrollbar-base-color: gray gray;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.2) inset;
+    scroll-behavior: smooth;
+    scrollbar-width: 90%;
+    box-shadow: 5px 5px 5px 5px hsla(0, 0%, 0%, 0.2) inset;
 }
+
