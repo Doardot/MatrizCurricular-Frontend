@@ -63,6 +63,8 @@ export default function Disciplinas() {
         });
     };
 
+
+
     return <>
         <div className="body">
             <Header />
@@ -75,14 +77,14 @@ export default function Disciplinas() {
                     >
                         <SemesterContainer disciplinas={disciplinas} />
                         {/* TODO: FIX no css da caixa, está colidindo os semestres */}
-                        {/* <SemesterContainer disciplinas={disciplinas2} /> */}
+                        <SemesterContainer disciplinas={disciplinas2} /> 
                     </DndContext>
-                    
-                </div>
-                {/* TODO: FIX no css aqui também */}
-                <div className='botaoAdicionar'>
+                    <div className='botaoAdicionar'>
                     <BotaoAdicionar onButtonClick={() => { }} />
                 </div>
+                </div>
+                {/* TODO: FIX no css aqui também */}
+                
             </div>
         </div >
     </>

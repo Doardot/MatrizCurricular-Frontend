@@ -28,10 +28,11 @@ export const SemesterContainer = ({ disciplinas: disciplinas }: SemesterContaine
                         />
                     ))}
                 </SortableContext>
-                
+                {/*
                 <div className='voidBox'>
                 <BotaoSalvar onButtonClick={() => { }} />
-            </div>
+                </div>
+                */}
             </div>
             
 

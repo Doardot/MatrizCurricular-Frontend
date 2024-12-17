@@ -2,28 +2,25 @@
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
-    background-color: rgba(190, 190, 190, 1);
+    /*background-color: rgba(190, 190, 190, 1);*/
     border-radius: 30px;
     width: 20rem;
     height: 40rem;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.2) inset;
 }
 
 .semesterContainer:hover {
-    background-color: rgba(190, 190, 190, 0.895); 
+    /*background-color: rgba(190, 190, 190, 0.895); */
     cursor: pointer; 
 }
 
 .semesterContainerFather{
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: 90%;
+    margin:auto;
     align-items: center;
     justify-content: center;
 }

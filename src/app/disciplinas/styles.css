@@ -21,12 +21,17 @@
 }
 
 .cardSemester {
+    padding: 25px;
     display: flex;
-    background-color: rgba(190, 190, 190, 1);
+    height: 80%;
     border-radius: 30px;
-    width: 20rem;
-    height: 40rem;
     align-items: center;
     justify-content: center;
     gap: 5vw;
+    overflow-anchor: auto;
+    overflow: scroll;
+    /*scrollbar-width: none;*/
+    scrollbar-color: hsla(0, 100%, 99%, 0.678) gray;
+    scrollbar-base-color: gray gray;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.2) inset;
 }
